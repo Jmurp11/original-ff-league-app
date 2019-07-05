@@ -1,0 +1,223 @@
+<% include partials/header %>
+
+	<div class="content">
+        <h1 id="draft_header">Draft History</h1>
+        
+        <div id="box">
+            <div class="box-top"></div>
+            <div class="box-panel">
+            	
+            	<div class="dropdown">
+					  <button id="gamesBtn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Season
+					  <span class="caret"></span></button>
+					  	<ul class="dropdown-menu">
+					      	  <li><a class="dropdown-item" name="2011" id="2011">2011</a></li>
+							  <li><a class="dropdown-item" name="2012" id="2011">2012</a></li>
+							  <li><a class="dropdown-item" name="2013" id="2011">2013</a></li>
+							  <li><a class="dropdown-item" name="2014" id="2011">2014</a></li>
+							  <li><a class="dropdown-item" name="2015" id="2011">2015</a></li>
+							  <li><a class="dropdown-item" name="2016" id="2011">2016</a></li>
+							  <li><a class="dropdown-item" name="2017" id="2011">2017</a></li>
+						  </ul>
+					</div>
+				<div id="main_div" style="display:none;">
+					<div id="div2011">
+						<table id="table2011" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+									<th>Round</th>
+								    <th>Pick</th>
+								    <th>Player</th> 
+								    <th>Position</th>
+								    <th>Drafted By</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[0].length; i++) { %>
+							         <tr>
+							         	<td><%= result[0][i].round %></td>
+							         	<td><%= result[0][i].pick %></td>
+										<td><%= result[0][i].player %></td>
+										<td><%= result[0][i].position %></td>
+										<td><%= result[0][i].team %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2012">
+							<table id="table2012" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Round</th>
+								    <th>Pick</th>
+								    <th>Player</th> 
+								    <th>Position</th>
+								    <th>Drafted By</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[1].length; i++) { %>
+							         <tr>
+							         	<td><%= result[1][i].round %></td>
+							         	<td><%= result[1][i].pick %></td>
+										<td><%= result[1][i].player %></td>
+										<td><%= result[1][i].position %></td>
+										<td><%= result[1][i].team %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2013">
+							<table id="table2013" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Round</th>
+								    <th>Pick</th>
+								    <th>Player</th> 
+								    <th>Position</th>
+								    <th>Drafted By</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[2].length; i++) { %>
+							         <tr>
+							         	<td><%= result[2][i].round %></td>
+							         	<td><%= result[2][i].pick %></td>
+										<td><%= result[2][i].player %></td>
+										<td><%= result[2][i].position %></td>
+										<td><%= result[2][i].team %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2014">
+							<table id="table2014" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Round</th>
+								    <th>Pick</th>
+								    <th>Player</th> 
+								    <th>Position</th>
+								    <th>Drafted By</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[3].length; i++) { %>
+							         <tr>
+							         	<td><%= result[3][i].round %></td>
+							         	<td><%= result[3][i].pick %></td>
+										<td><%= result[3][i].player %></td>
+										<td><%= result[3][i].position %></td>
+										<td><%= result[3][i].team %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2015">
+							<table id="table2015" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Round</th>
+								    <th>Pick</th>
+								    <th>Player</th> 
+								    <th>Position</th>
+								    <th>Drafted By</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[4].length; i++) { %>
+							         <tr>
+							         	<td><%= result[4][i].round %></td>
+							         	<td><%= result[4][i].pick %></td>
+										<td><%= result[4][i].player %></td>
+										<td><%= result[4][i].position %></td>
+										<td><%= result[4][i].team %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2016">
+							<table id="table2016" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Round</th>
+								    <th>Pick</th>
+								    <th>Player</th> 
+								    <th>Position</th>
+								    <th>Drafted By</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[5].length; i++) { %>
+							         <tr>
+							         	<td><%= result[5][i].round %></td>
+							         	<td><%= result[5][i].pick %></td>
+										<td><%= result[5][i].player %></td>
+										<td><%= result[5][i].position %></td>
+										<td><%= result[5][i].team %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2017">
+							<table id="table2017" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Round</th>
+								    <th>Pick</th>
+								    <th>Player</th> 
+								    <th>Position</th>
+								    <th>Drafted By</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[6].length; i++) { %>
+							         <tr>
+							         	<td><%= result[6][i].round %></td>
+							         	<td><%= result[6][i].pick %></td>
+										<td><%= result[6][i].player %></td>
+										<td><%= result[6][i].position %></td>
+										<td><%= result[6][i].team %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+    $(document).ready(function() {
+      $('#table2011').DataTable( {
+        "order": [[ 1, "asc" ]]
+      });
+      $('#table2012').DataTable( {
+        "order": [[ 1, "asc" ]]
+      });
+      $('#table2013').DataTable( {
+        "order": [[ 1, "asc" ]]
+      });
+      $('#table2014').DataTable( {
+        "order": [[ 1, "asc" ]]
+      });
+      $('#table2015').DataTable( {
+        "order": [[ 1, "asc" ]]
+      });
+      $('#table2016').DataTable( {
+        "order": [[ 1, "asc" ]]
+      });
+      $('#table2017').DataTable( {
+        "order": [[ 1, "asc" ]]
+      });
+    } );
+</script>
+<script src="/javascript/draftJs.js"></script>
+<% include partials/footer %>

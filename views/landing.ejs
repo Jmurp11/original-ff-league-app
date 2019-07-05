@@ -1,0 +1,385 @@
+<% include partials/header %>
+
+    <div class="content">
+        <div id="box">
+            <div class="box-panel">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center" id="counter" style="background-color: #5A5B5C;">
+                    <h4 id="count_header" style="font-weight:bold; color: white;">Countdown to the 2018 Kickoff: <span id="counterP" style="color: #F3880F;"></span></h4>
+                </div>
+                <div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div style="padding: 15px">
+						<div id="winsDiv">
+							<canvas id="atWChart" width="50" height="30">></canvas>
+						</div>
+						<script>
+							  	var atWChart = document.getElementById("atWChart");
+                   Chart.defaults.global.defaultFontStyle = 'bold';
+							    var winsData = {
+                                  label: 'All-Time Wins',
+                                  data: [<%= wins %>], 
+                                  backgroundColor: [
+                                    'rgba(0, 5, 102, 0.6)',
+                                    'rgba(0, 5, 112, 0.6)',
+                                    'rgba(0, 5, 122, 0.6)',
+                                    'rgba(0, 5, 132, 0.6)',
+                                    'rgba(0, 5, 142, 0.6)',
+                                    'rgba(0, 5, 152, 0.6)',
+                                    'rgba(0, 5, 162, 0.6)',
+                                    'rgba(0, 5, 172, 0.6)',
+                                    'rgba(0, 5, 182, 0.6)',
+                                    'rgba(0, 5, 192, 0.6)',
+                                    'rgba(0, 5, 202, 0.6)',
+                                    'rgba(0, 5, 212, 0.6)',
+                                    'rgba(0, 5, 222, 0.6)',
+                                    'rgba(0, 5, 232, 0.6)',
+                                  ],
+                                  borderColor: [
+                                    'rgba(0, 5, 102, 1)',
+                                    'rgba(0, 5, 112, 1)',
+                                    'rgba(0, 5, 122, 1)',
+                                    'rgba(0, 5, 132, 1)',
+                                    'rgba(0, 5, 142, 1)',
+                                    'rgba(0, 5, 152, 1)',
+                                    'rgba(0, 5, 162, 1)',
+                                    'rgba(0, 5, 172, 1)',
+                                    'rgba(0, 5, 182, 1)',
+                                    'rgba(0, 5, 192, 1)',
+                                    'rgba(0, 5, 202, 1)',
+                                    'rgba(0, 5, 212, 1)',
+                                    'rgba(0, 5, 222, 1)',
+                                    'rgba(0, 5, 232, 1)',
+                                  ],
+                                  borderWidth: 2,
+                                  hoverBorderWidth: 0
+                                };
+                                 
+                                var chartOptions = {
+                                  scales: {
+                                    yAxes: [{
+                                      barPercentage: 0.5
+                                    }]
+                                  },
+                                  elements: {
+                                    rectangle: {
+                                      borderSkipped: 'left',
+                                    }
+                                  }
+                                };
+                                 
+                                var barChart = new Chart(atWChart, {
+                                  type: 'bar',
+                                  data: {
+                                    labels: [ 'Andrew',
+                                              'Anthony',
+                                              'Brendan',
+                                              'Ciaran',
+                                              'James',
+                                              'Jimmy',
+                                              'John',
+                                              'Keegan',
+                                              'Matthew',
+                                              'Michael',
+                                              'Mike',
+                                              'Patrick',
+                                              'Robert',
+                                              'Tommy' ],
+                                    datasets: [winsData],
+                                  },
+                                  options: chartOptions
+                                });
+						</script>
+					</div>  
+                  </div>
+                  <div class="col-md-6">
+                       <div style="padding: 15px">
+						<div id="atWpDiv">
+							<canvas id="atWpChart" width="50" height="30">></canvas>
+						</div>
+						<script>
+							  	var atWpChart = document.getElementById("atWpChart");
+                   Chart.defaults.global.defaultFontStyle = 'bold';
+							    var dataFirst = {
+                                  label: 'Winning Percentage',
+                                 data: [<%= win_perc %>],
+                                  backgroundColor: [
+                                    'rgba(0, 84, 26, 0.6)',
+                                    'rgba(0, 114, 26, 0.6)',
+                                    'rgba(0, 144, 26, 0.6)',
+                                    'rgba(0, 174, 26, 0.6)',
+                                    'rgba(0, 224, 26, 0.6)',
+                                    'rgba(0, 254, 26, 0.6)',
+                                    'rgba(0, 274, 26, 0.6)',
+                                    'rgba(1, 294, 26, 0.6)',
+                                    'rgba(1, 314, 26, 0.6)',
+                                    'rgba(1, 334, 26, 0.6)',
+                                    'rgba(1, 354, 26, 0.6)',
+                                    'rgba(1, 374, 26, 0.6)',
+                                    'rgba(1, 394, 26, 0.6)',
+                                    'rgba(1, 414, 26, 0.6)'
+                                  ],
+                                  borderColor: [
+                                    'rgba(0, 84, 26, 1)',
+                                    'rgba(0, 114, 26, 1)',
+                                    'rgba(0, 144, 26, 1)',
+                                    'rgba(0, 174, 26, 1)',
+                                    'rgba(0, 224, 26, 1)',
+                                    'rgba(0, 254, 26, 1)',
+                                    'rgba(0, 274, 26, 1)',
+                                    'rgba(1, 294, 26, 1)',
+                                    'rgba(1, 314, 26, 1)',
+                                    'rgba(1, 334, 26, 1)',
+                                    'rgba(1, 354, 26, 1)',
+                                    'rgba(1, 374, 26, 1)',
+                                    'rgba(1, 394, 26, 1)',
+                                    'rgba(1, 414, 26, 1)'
+                                  ],
+                                  borderWidth: 2,
+                                  hoverBorderWidth: 0
+                                };
+                                 
+                                var chartOptions = {
+                                  scales: {
+                                    yAxes: [{
+                                      barPercentage: 0.5
+                                    }]
+                                  },
+                                  elements: {
+                                    rectangle: {
+                                      borderSkipped: 'left',
+                                    }
+                                  }
+                                };
+                                 
+                                var barChart = new Chart(atWpChart, {
+                                  type: 'bar',
+                                  data: {
+                                    labels: [ 'Andrew',
+                                              'Anthony',
+                                              'Brendan',
+                                              'Ciaran',
+                                              'James',
+                                              'Jimmy',
+                                              'John',
+                                              'Keegan',
+                                              'Matthew',
+                                              'Michael',
+                                              'Mike',
+                                              'Patrick',
+                                              'Robert',
+                                              'Tommy' ],
+                                    datasets: [dataFirst],
+                                  },
+                                  options: chartOptions
+                                });
+						</script>
+					</div>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-6">
+                       <div style="padding: 15px">
+						<div id="atPDiv">
+						    <canvas id="atPChart" width="50" height="30">></canvas>
+						</div>
+						<script>
+							  	var atPChart = document.getElementById("atPChart");
+							    Chart.defaults.global.defaultFontStyle = 'bold';
+							    var dataFirst = {
+                                  label: 'All-Time Points For',
+                                  data: [<%= pf %>],
+                                  backgroundColor: [
+                                    'rgba(139, 3, 0, 0.6)',
+                                    'rgba(149, 3, 0, 0.6)',
+                                    'rgba(159, 3, 0, 0.6)',
+                                    'rgba(169, 3, 0, 0.6)',
+                                    'rgba(179, 3, 0, 0.6)',
+                                    'rgba(189, 3, 0, 0.6)',
+                                    'rgba(199, 3, 0, 0.6)',
+                                    'rgba(209, 3, 0, 0.6)',
+                                    'rgba(219, 3, 0, 0.6)',
+                                    'rgba(229, 3, 0, 0.6)',
+                                    'rgba(239, 3, 0, 0.6)',
+                                    'rgba(244, 3, 0, 0.6)',
+                                    'rgba(250, 3, 0, 0.6)',
+                                    'rgba(255, 3, 0, 0.6)'
+                                  ],
+                                  borderColor: [
+                                    'rgba(139, 3, 0, 1)',
+                                    'rgba(149, 3, 0, 1)',
+                                    'rgba(159, 3, 0, 1)',
+                                    'rgba(169, 3, 0, 1)',
+                                    'rgba(179, 3, 0, 1)',
+                                    'rgba(189, 3, 0, 1)',
+                                    'rgba(199, 3, 0, 1)',
+                                    'rgba(209, 3, 0, 1)',
+                                    'rgba(219, 3, 0, 1)',
+                                    'rgba(229, 3, 0, 1)',
+                                    'rgba(239, 3, 0, 1)',
+                                    'rgba(244, 3, 0, 1)',
+                                    'rgba(250, 3, 0, 1)',
+                                    'rgba(255, 3, 0, 1)'
+                                  ],
+                                  borderWidth: 2,
+                                  hoverBorderWidth: 0
+                                };
+                                 
+                                var chartOptions = {
+                                  scales: {
+                                    yAxes: [{
+                                      barPercentage: 0.5
+                                    }]
+                                  },
+                                  elements: {
+                                    rectangle: {
+                                      borderSkipped: 'left',
+                                    }
+                                  }
+                                };
+                                 
+                                var barChart = new Chart(atPChart, {
+                                  type: 'bar',
+                                  data: {
+                                    labels: [ 'Andrew',
+                                              'Anthony',
+                                              'Brendan',
+                                              'Ciaran',
+                                              'James',
+                                              'Jimmy',
+                                              'John',
+                                              'Keegan',
+                                              'Matthew',
+                                              'Michael',
+                                              'Mike',
+                                              'Patrick',
+                                              'Robert',
+                                              'Tommy' ],
+                                    datasets: [dataFirst],
+                                  },
+                                  options: chartOptions
+                                });
+						</script>
+					</div>
+                   </div>
+                   <div class="col-md-6">
+                       <div style="padding: 15px">
+						<div id="atAvgPDiv">
+							<canvas id="atAvgPChart" width="50" height="30"></canvas>
+						</div>
+						<script>
+							  	var atAvgPChart = document.getElementById("atAvgPChart");
+                   Chart.defaults.global.defaultFontStyle = 'bold';
+							    var dataFirst = {
+                                  label: 'Average Points Per Game',
+                                  data: [<%= avg_pps %>],
+                                  backgroundColor: [
+                                    'rgba(0, 99, 104, 0.6)',
+                                    'rgba(0, 110, 104, 0.6)',
+                                    'rgba(0,120, 104, 0.6)',
+                                    'rgba(0, 130, 104, 0.6)',
+                                    'rgba(0, 140, 104, 0.6)',
+                                    'rgba(0, 150, 104, 0.6)',
+                                    'rgba(0, 160, 104, 0.6)',
+                                    'rgba(0, 170, 104, 0.6)',
+                                    'rgba(0, 180, 104, 0.6)',
+                                    'rgba(0, 190, 104, 0.6)',
+                                    'rgba(0, 200, 104, 0.6)',
+                                    'rgba(0, 210, 104, 0.6)',
+                                    'rgba(0, 220, 104, 0.6)',
+                                    'rgba(0, 230, 104, 0.6)',
+                                  ],
+                                  borderColor: [
+                                    'rgba(0, 99, 104, 1)',
+                                    'rgba(0, 110, 104,1)',
+                                    'rgba(0,120, 104, 1)',
+                                    'rgba(0, 130, 104,1)',
+                                    'rgba(0, 140, 104,1)',
+                                    'rgba(0, 150, 104, 1)',
+                                    'rgba(0, 160, 104, 1)',
+                                    'rgba(0, 170, 104, 1)',
+                                    'rgba(0, 180, 104, 1)',
+                                    'rgba(0, 190, 104, 1)',
+                                    'rgba(0, 200, 104, 1)',
+                                    'rgba(0, 210, 104, 1)',
+                                    'rgba(0, 220, 104, 1)',
+                                    'rgba(0, 230, 104, 1)',
+                                  ],
+                                  borderWidth: 2,
+                                  hoverBorderWidth: 0
+                                };
+                                 
+                                var chartOptions = {
+                                  scales: {
+                                    yAxes: [{
+                                      barPercentage: 0.5
+                                    }]
+                                  },
+                                  elements: {
+                                    rectangle: {
+                                      borderSkipped: 'left',
+                                    }
+                                  }
+                                };
+                                 
+                                var barChart = new Chart(atAvgPChart, {
+                                  type: 'bar',
+                                  data: {
+                                    labels: [ 'Andrew',
+                                              'Anthony',
+                                              'Brendan',
+                                              'Ciaran',
+                                              'James',
+                                              'Jimmy',
+                                              'John',
+                                              'Keegan',
+                                              'Matthew',
+                                              'Michael',
+                                              'Mike',
+                                              'Patrick',
+                                              'Robert',
+                                              'Tommy' ],
+                                    datasets: [dataFirst],
+                                  },
+                                  options: chartOptions
+                                });
+						</script>
+					</div>
+                   </div>
+                 </div>
+            </div>
+        </div>
+	</div>
+	
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+    // Set the date we're counting down to
+    var countDownDate = new Date("Sep 6, 2018 20:30:00").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+        // Get todays date and time
+        var now = new Date().getTime();
+        
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+        
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Output the result in an element with id="demo"
+        document.getElementById("counterP").innerHTML = days + " days " + hours + " hours "
+        + minutes + " minutes " + seconds + " seconds ";
+        
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "ITS GAMEDAY";
+        }
+    }, 1000);
+</script>
+<% include partials/footer %>

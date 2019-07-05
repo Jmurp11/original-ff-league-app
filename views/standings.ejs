@@ -1,0 +1,254 @@
+<% include partials/header %>
+
+	<div class="content">
+        <h1 id='standings_header'>League Standings</h1>
+        
+        <div id="box">
+            <div class="box-top"></div>
+            <div class="box-panel">
+            	
+            	<div class="dropdown">
+				  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Season
+				  <span class="caret"></span></button>
+				  <ul id="standings_dd" class="dropdown-menu">
+			      	  <li><a>2011</a></li>
+					  <li><a>2012</a></li>
+					  <li><a>2013</a></li>
+					  <li><a>2014</a></li>
+					  <li><a>2015</a></li>
+					  <li><a>2016</a></li>
+					  <li><a>2017</a></li>
+				  </ul>
+				</div>
+				<br>
+				<div id="main_div" style="display:none;">
+					<div>
+	                	<span style="display: inline-block;">
+	    				  <table class="table table-striped" style="display: inline-block;">
+	    				    <tr>
+	    		                <th id="champ" scope="row">Champion:</th>
+	    		                <td><span id="champion_name"> </span><i class="fa fa-trophy" aria-hidden="true"></i></td>
+	    		            </tr>
+	    		            <tr>
+	    		                <th id="runner" scope="row">Runner-Up:</th>
+	    		                <td id="runner_upName"></td>
+	    		            </tr>
+	    				  </table>
+	    			  	</span>
+	            	</div>
+	            	<table id="table2011" class="table table-striped" style="width:100%">
+					  	<thead>
+						  	<tr>
+						  		<th>Rank</th>
+							    <th>Name</th>
+							    <th>GP</th> 
+							    <th>W</th>
+							    <th>L</th>
+							    <th>T</th>
+							    <th>Win %</th>
+							    <th>PF</th>
+							    <th>PA</th>
+							</tr>
+					  	</thead>
+					   	<tbody> 
+					       <% for (var i = 0; i < result[0].length; i++) { %>
+					         <tr>
+					         	<td><%= i + 1 %></td>
+					         	<td><%= result[0][i].team %></td>
+					         	<td><%= result[0][i].gp %></td>
+								<td><%= result[0][i].wins %></td>
+								<td><%= result[0][i].losses %></td>
+								<td><%= result[0][i].ties %></td>
+								<td><%= result[0][i].win_perc %></td>
+								<td><%= result[0][i].pf %></td>
+								<td><%= result[0][i].pa %></td>
+					         </tr>
+					      <% }; %>
+			      		</tbody>
+					</table>
+					<table id="table2012" class="table table-striped" style="width:100%">
+					  	<thead>
+						  	<tr>
+						  		<th>Rank</th>
+							    <th>Name</th>
+							    <th>GP</th> 
+							    <th>W</th>
+							    <th>L</th>
+							    <th>T</th>
+							    <th>Win %</th>
+							    <th>PF</th>
+							    <th>PA</th>
+							</tr>
+					  	</thead>
+					   	<tbody> 
+					       <% for (var i = 0; i < result[1].length; i++) { %>
+					         <tr>
+					         	<td><%= i + 1 %></td>
+					         	<td><%= result[1][i].team %></td>
+					         	<td><%= result[1][i].gp %></td>
+								<td><%= result[1][i].wins %></td>
+								<td><%= result[1][i].losses %></td>
+								<td><%= result[1][i].ties %></td>
+								<td><%= result[1][i].win_perc %></td>
+								<td><%= result[1][i].pf %></td>
+								<td><%= result[1][i].pa %></td>
+					         </tr>
+					      <% }; %>
+			      		</tbody>
+					</table>
+					<table id="table2013" class="table table-striped" style="width:100%">
+					  	<thead>
+						  	<tr>
+						  		<th>Rank</th>
+							    <th>Name</th>
+							    <th>GP</th> 
+							    <th>W</th>
+							    <th>L</th>
+							    <th>T</th>
+							    <th>Win %</th>
+							    <th>PF</th>
+							    <th>PA</th>
+							</tr>
+					  	</thead>
+					   	<tbody> 
+					       <% for (var i = 0; i < result[2].length; i++) { %>
+					         <tr>
+					         	<td><%= i + 1 %></td>
+					         	<td><%= result[2][i].team %></td>
+					         	<td><%= result[2][i].gp %></td>
+								<td><%= result[2][i].wins %></td>
+								<td><%= result[2][i].losses %></td>
+								<td><%= result[2][i].ties %></td>
+								<td><%= result[2][i].win_perc %></td>
+								<td><%= result[2][i].pf %></td>
+								<td><%= result[2][i].pa %></td>
+					         </tr>
+					      <% }; %>
+			      		</tbody>
+					</table>
+					<table id="table2014" class="table table-striped" style="width:100%">
+					  	<thead>
+						  	<tr>
+						  		<th>Rank</th>
+							    <th>Name</th>
+							    <th>GP</th> 
+							    <th>W</th>
+							    <th>L</th>
+							    <th>T</th>
+							    <th>Win %</th>
+							    <th>PF</th>
+							    <th>PA</th>
+							</tr>
+					  	</thead>
+					   	<tbody> 
+					       <% for (var i = 0; i < result[3].length; i++) { %>
+					         <tr>
+					         	<td><%= i + 1 %></td>
+					         	<td><%= result[3][i].team %></td>
+					         	<td><%= result[3][i].gp %></td>
+								<td><%= result[3][i].wins %></td>
+								<td><%= result[3][i].losses %></td>
+								<td><%= result[3][i].ties %></td>
+								<td><%= result[3][i].win_perc %></td>
+								<td><%= result[3][i].pf %></td>
+								<td><%= result[3][i].pa %></td>
+					         </tr>
+					      <% }; %>
+			      		</tbody>
+					</table>
+					<table id="table2015" class="table table-striped" style="width:100%">
+					  	<thead>
+						  	<tr>
+						  		<th>Rank</th>
+							    <th>Name</th>
+							    <th>GP</th> 
+							    <th>W</th>
+							    <th>L</th>
+							    <th>T</th>
+							    <th>Win %</th>
+							    <th>PF</th>
+							    <th>PA</th>
+							</tr>
+					  	</thead>
+					   	<tbody> 
+					       <% for (var i = 0; i < result[4].length; i++) { %>
+					         <tr>
+					         	<td><%= i + 1 %></td>
+					         	<td><%= result[4][i].team %></td>
+					         	<td><%= result[4][i].gp %></td>
+								<td><%= result[4][i].wins %></td>
+								<td><%= result[4][i].losses %></td>
+								<td><%= result[4][i].ties %></td>
+								<td><%= result[4][i].win_perc %></td>
+								<td><%= result[4][i].pf %></td>
+								<td><%= result[4][i].pa %></td>
+					         </tr>
+					      <% }; %>
+			      		</tbody>
+					</table>
+					<table id="table2016" class="table table-striped" style="width:100%">
+					  	<thead>
+						  	<tr>
+						  		<th>Rank</th>
+							    <th>Name</th>
+							    <th>GP</th> 
+							    <th>W</th>
+							    <th>L</th>
+							    <th>T</th>
+							    <th>Win %</th>
+							    <th>PF</th>
+							    <th>PA</th>
+							</tr>
+					  	</thead>
+					   	<tbody> 
+					       <% for (var i = 0; i < result[5].length; i++) { %>
+					         <tr>
+					         	<td><%= i + 1 %></td>
+					         	<td><%= result[5][i].team %></td>
+					         	<td><%= result[5][i].gp %></td>
+								<td><%= result[5][i].wins %></td>
+								<td><%= result[5][i].losses %></td>
+								<td><%= result[5][i].ties %></td>
+								<td><%= result[5][i].win_perc %></td>
+								<td><%= result[5][i].pf %></td>
+								<td><%= result[5][i].pa %></td>
+					         </tr>
+					      <% }; %>
+			      		</tbody>
+					</table>
+					<table id="table2017" class="table table-striped" style="width:100%">
+					  	<thead>
+						  	<tr>
+						  		<th>Rank</th>
+							    <th>Name</th>
+							    <th>GP</th> 
+							    <th>W</th>
+							    <th>L</th>
+							    <th>T</th>
+							    <th>Win %</th>
+							    <th>PF</th>
+							    <th>PA</th>
+							</tr>
+					  	</thead>
+					   	<tbody> 
+					       <% for (var i = 0; i < result[6].length; i++) { %>
+					         <tr>
+					         	<td><%= i + 1 %></td>
+					         	<td><%= result[6][i].team %></td>
+					         	<td><%= result[6][i].gp %></td>
+								<td><%= result[6][i].wins %></td>
+								<td><%= result[6][i].losses %></td>
+								<td><%= result[6][i].ties %></td>
+								<td><%= result[6][i].win_perc %></td>
+								<td><%= result[6][i].pf %></td>
+								<td><%= result[6][i].pa %></td>
+					         </tr>
+					      <% }; %>
+			      		</tbody>
+					</table>
+				</div>
+		    </div>
+		</div>
+	</div>
+<script src="/javascript/standingsJs.js"></script>
+<% include partials/footer %>

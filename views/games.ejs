@@ -1,0 +1,223 @@
+<% include partials/header %>
+
+	<div class="content">
+        <h1 id="games_header">Past Regular Season Results</h1>
+        
+        <div id="box">
+            <div class="box-top"></div>
+            <div class="box-panel">
+            	<form id="dropdownForm" action="/games" method="post">
+	            	<div class="dropdown">
+					  <button id="gamesBtn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Season
+					  <span class="caret"></span></button>
+					  	<ul class="dropdown-menu">
+					      	  <li><a class="dropdown-item" name="2011" id="2011">2011</a></li>
+							  <li><a class="dropdown-item" name="2012" id="2011">2012</a></li>
+							  <li><a class="dropdown-item" name="2013" id="2011">2013</a></li>
+							  <li><a class="dropdown-item" name="2014" id="2011">2014</a></li>
+							  <li><a class="dropdown-item" name="2015" id="2011">2015</a></li>
+							  <li><a class="dropdown-item" name="2016" id="2011">2016</a></li>
+							  <li><a class="dropdown-item" name="2017" id="2011">2017</a></li>
+						  </ul>
+					</div>
+				</form>
+				<br>
+				<div id="main_div" style="display:none;">
+					<div id="div2011">
+						<table id="table2011" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Home</th>
+								    <th>Home Score</th> 
+								    <th>Away Score</th>
+								    <th>Away</th>
+								    <th>Week</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[0].length; i++) { %>
+							         <tr>
+							         	<td><%= result[0][i].home %></td>
+							         	<td><%= result[0][i].h_score %></td>
+										<td><%= result[0][i].a_score %></td>
+										<td><%= result[0][i].away %></td>
+										<td><%= result[0][i].week %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2012">
+							<table id="table2012" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Home</th>
+								    <th>Home Score</th> 
+								    <th>Away Score</th>
+								    <th>Away</th>
+								    <th>Week</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[1].length; i++) { %>
+							         <tr>
+							         	<td><%= result[1][i].home %></td>
+							         	<td><%= result[1][i].h_score %></td>
+										<td><%= result[1][i].a_score %></td>
+										<td><%= result[1][i].away %></td>
+										<td><%= result[1][i].week %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2013">
+							<table id="table2013" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Home</th>
+								    <th>Home Score</th> 
+								    <th>Away Score</th>
+								    <th>Away</th>
+								    <th>Week</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[2].length; i++) { %>
+							         <tr>
+							         	<td><%= result[2][i].home %></td>
+							         	<td><%= result[2][i].h_score %></td>
+										<td><%= result[2][i].a_score %></td>
+										<td><%= result[2][i].away %></td>
+										<td><%= result[2][i].week %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2014">
+							<table id="table2014" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Home</th>
+								    <th>Home Score</th> 
+								    <th>Away Score</th>
+								    <th>Away</th>
+								    <th>Week</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[3].length; i++) { %>
+							         <tr>
+							         	<td><%= result[3][i].home %></td>
+							         	<td><%= result[3][i].h_score %></td>
+										<td><%= result[3][i].a_score %></td>
+										<td><%= result[3][i].away %></td>
+										<td><%= result[3][i].week %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2015">
+							<table id="table2015" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Home</th>
+								    <th>Home Score</th> 
+								    <th>Away Score</th>
+								    <th>Away</th>
+								    <th>Week</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[4].length; i++) { %>
+							         <tr>
+							         	<td><%= result[4][i].home %></td>
+							         	<td><%= result[4][i].h_score %></td>
+										<td><%= result[4][i].a_score %></td>
+										<td><%= result[4][i].away %></td>
+										<td><%= result[4][i].week %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2016">
+							<table id="table2016" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Home</th>
+								    <th>Home Score</th> 
+								    <th>Away Score</th>
+								    <th>Away</th>
+								    <th>Week</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[5].length; i++) { %>
+							         <tr>
+							         	<td><%= result[5][i].home %></td>
+							         	<td><%= result[5][i].h_score %></td>
+										<td><%= result[5][i].a_score %></td>
+										<td><%= result[5][i].away %></td>
+										<td><%= result[5][i].week %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="div2017">
+							<table id="table2017" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Home</th>
+								    <th>Home Score</th> 
+								    <th>Away Score</th>
+								    <th>Away</th>
+								    <th>Week</th>
+								</tr>
+							  </thead>
+								<tbody> 
+							       <% for (var i = 0; i < result[6].length; i++) { %>
+							         <tr>
+							         	<td><%= result[6][i].home %></td>
+							         	<td><%= result[6][i].h_score %></td>
+										<td><%= result[6][i].a_score %></td>
+										<td><%= result[6][i].away %></td>
+										<td><%= result[6][i].week %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+				</div>
+		</div>
+	</div>
+<script>
+    $(document).ready(function() {
+      $('#table2011').DataTable( {
+        "order": [[ 4, "asc" ]]
+      });
+      $('#table2012').DataTable( {
+        "order": [[ 4, "asc" ]]
+      });
+      $('#table2013').DataTable( {
+        "order": [[ 4, "asc" ]]
+      });
+      $('#table2014').DataTable( {
+        "order": [[ 4, "asc" ]]
+      });
+      $('#table2015').DataTable( {
+        "order": [[ 4, "asc" ]]
+      });
+      $('#table2016').DataTable( {
+        "order": [[ 4, "asc" ]]
+      });
+      $('#table2017').DataTable( {
+        "order": [[ 4, "asc" ]]
+      });
+    } );
+</script>
+<script src="/javascript/gamesJs.js"></script>
+<% include partials/footer %>

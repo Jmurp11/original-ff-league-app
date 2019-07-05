@@ -1,0 +1,74 @@
+<% include partials/header %>
+
+	<div class="content">
+	        <h1 id="awards_header">Man Durray Awards</h1>
+	        
+	        <div id="box">
+	            <div class="box-top"></div>
+	            <div class="box-panel">
+	            	<div id="radio_div" class="col-md-12 col-sm-12 col-xs-12 text-center">
+	            		<label class="radio-inline" style="font-size: 20px; line-height: 1.6; font-weight: bold;">
+	            			<input type="radio" id="champ_radio" name="optradio" style="margin-top: 0.3em; width: 1em; height: 1.1em;"
+									type="radio"
+									value="Deneme"/> Durray Championships
+						</label>
+						<label class="radio-inline" style="font-size: 20px; line-height: 1.6; font-weight: bold;">
+							<input type="radio" id="loser_radio" name="optradio" style="margin-top: 0.3em; width: 1em; height: 1.1em;"
+									type="radio"
+									value="Deneme"/> GIS Bowls
+						</label>
+	            	</div>
+		            	<div id="champs" style="display:none;">
+		                	<table id="table" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Champion</th>
+								    <th>Champion Score</th> 
+								    <th>Runner-up Score</th>
+								    <th>Runner-up</th>
+								    <th>Year</th>
+								</tr>
+							  </thead>
+								<tbody> 
+								<% for (var i = 0; i < result[0].length; i++) { %>
+							         <tr>
+							         	<td><i class="fa fa-trophy" aria-hidden="true"></i> <span><%= result[0][i].away %></span></td>
+							         	<td><%= result[0][i].a_score %></td>
+										<td><%= result[0][i].h_score %></td>
+										<td><%= result[0][i].home %></td>
+										<td><%= result[0][i].year %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+						<div id="losers" style="display:none;">
+		                	<table id="table" class="table table-striped" style="width:100%">
+							  <thead>
+							  	<tr>
+								    <th>Last Place</th>
+								    <th>Last Place Score</th> 
+								    <th>Runner-up Score</th>
+								    <th>Runner-up</th>
+								    <th>Year</th>
+								</tr>
+							  </thead>
+								<tbody> 
+								<% for (var i = 0; i < result[1].length; i++) { %>
+							         <tr>
+							         	<td><i class="fa fa-trash" aria-hidden="true"></i> <span><%= result[1][i].home %></span></td>
+							         	<td><%= result[1][i].h_score %></td>
+										<td><%= result[1][i].a_score %></td>
+										<td><%= result[1][i].away %></td>
+										<td><%= result[1][i].year %></td>
+							         </tr>
+							      <% }; %>
+						      	</tbody>
+							</table>
+						</div>
+	            </div>
+	        </div>
+		</div>
+	
+<script src="/javascript/md_resultsJs.js"></script>
+<% include partials/footer %>

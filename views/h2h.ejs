@@ -1,0 +1,385 @@
+<% include partials/header %>
+	 
+	 <div class="content">
+        <h1>Head to Head Comparison</h1>
+        
+        <div id="box">
+            <div class="box-top"></div>
+            <div class="box-panel" align="center">
+            	<form id="h2hForm" action="/h2h" method="POST">
+                	<div class='row' style="padding: 15px">
+	                	<div class="col-xs-4">
+						  <select id="dropdownMenu1" name="owner1">
+						  	<option><a href="#"> </a></option>
+						    <option><a href="#">John Bronzo</a></option>
+						    <option><a href="#">Matthew Genovese</a></option>
+						    <option><a href="#">Mike Moriarty</a></option>
+						    <option><a href="#">Michael Neely</a></option>
+						    <option><a href="#">Anthony Carr</a></option>
+						    <option><a href="#">Andrew Joseph</a></option>
+						    <option><a href="#">Patrick Gormally</a></option>
+						    <option><a href="#">Jimmy Murphy Jr</a></option>
+						    <option><a href="#">James Murphy Sr</a></option>
+						    <option><a href="#">Brendan Murphy</a></option>
+						    <option><a href="#">Keegan Talty</a></option>
+						    <option><a href="#">Robert Werner</a></option>
+						    <option><a href="#">Ciaran Slattery</a></option>
+						    <option><a href="#">Joseph Micela</a></option>
+						    <option><a href="#">Peter McGrane</a></option>
+						    <option><a href="#">Matthew Murphy</a></option>
+						    <option><a href="#">Tommy Enright</a></option>
+						  </select>
+						</div>
+						<div class="col-xs-4">
+							<input type="submit" id="compare" class="btn btn-primary" value="Compare"/>
+						</div>
+						<div class="col-xs-4">
+							<div class="dropdown">
+							  <select id="dropdownMenu2" name="owner2">
+							  	<option><a href="#"> </a></option>
+							    <option><a href="#">John Bronzo</a></option>
+							    <option><a href="#">Matthew Genovese</a></option>
+							    <option><a href="#">Mike Moriarty</a></option>
+							    <option><a href="#">Michael Neely</a></option>
+							    <option><a href="#">Anthony Carr</a></option>
+							    <option><a href="#">Andrew Joseph</a></option>
+							    <option><a href="#">Patrick Gormally</a></option>
+							    <option><a href="#">Jimmy Murphy Jr</a></option>
+							    <option><a href="#">James Murphy Sr</a></option>
+							    <option><a href="#">Brendan Murphy</a></option>
+							    <option><a href="#">Keegan Talty</a></option>
+							    <option><a href="#">Robert Werner</a></option>
+							    <option><a href="#">Ciaran Slattery</a></option>
+							    <option><a href="#">Joseph Micela</a></option>
+							    <option><a href="#">Peter McGrane</a></option>
+							    <option><a href="#">Matthew Murphy</a></option>
+							    <option><a href="#">Tommy Enright</a></option>
+							  </select>
+							</div>
+						</div>
+					</div>
+				</form>
+				<div id="main-content">
+					<div align="center">
+						<span style="display: inline-block;">
+							<table class="table table-striped" style="display: inline-block;">
+								<tr>
+									<th id="name1" scope="row">Name:</th>
+									<td id="n1"><%= team1 %></td>
+								</tr>
+								<tr>
+									<th id="h2h1" scope="row">Head to Head:</th>
+									<td><%= h2h1 %></td>
+								</tr>
+								<tr>
+									<th id="current1" scope="row">Current Record:</th>
+									<td><%= current1 %></td>
+								</tr>
+								<tr>
+									<th id="atr1" scope="row">All-Time Record:</th>
+									<td><%= at1 %></td>
+								</tr>
+							</table>
+						</span>
+						<span style="display: inline-block;">
+							<table class="table table-striped" style="display: inline-block;">
+								<tr>
+									<th id="name2" scope="row">Name:</th>
+									<td id="n2"><%= team2 %></td>
+								</tr>
+								<tr>
+									<th id="h2h2" scope="row">Head to Head:</th>
+									<td><%= h2h2 %></td>
+								</tr>
+								<tr>
+									<th id="current2" scope="row">Current Record:</th>
+									<td><%= current2 %></td>
+								</tr>
+								<tr>
+									<th id="atr2" scope="row">All-Time Record:</th>
+									<td><%= at2 %></td>
+								</tr>
+							</table>
+						</span>
+					</div>
+					<div style="padding: 15px">
+						<span id="chartSpan"><h1 style="color: #444141;"><i id="wcPlus" title="Win Trends" class="fa fa-bar-chart" aria-hidden="true"><a href=""></a></i>		|		<i id="pfPlus" title="Point Trends" class="fa fa-line-chart" aria-hidden="true"><a href=""></a></i>		|		<i id="wpPlus" class="fa fa-percent" aria-hidden="true"></i></h1></span>
+						<div id="winsDiv">
+							<h5 id="wHeader" style='display:none;'>Win Trends</h5>
+							<canvas id="winsChart" width="150" height="50" style='display:none;'></canvas>
+						</div>
+						<div id="pfDiv">
+							<h5 id="pfHeader" style='display:none;'>Point Trends</h5>
+							<canvas id="pfChart" width="150" height="50" style='display:none;'></canvas>
+						</div>
+						<div id="wpDiv">
+							<h5 id="wpHeader" style='display:none;'>Winning Percentage Trends</h5>
+							<canvas id="wpChart" width="150" height="50" style='display:none;'></canvas>
+						</div>
+						<script>
+							  	var winsChart = document.getElementById("winsChart");
+
+							    Chart.defaults.global.defaultFontFamily = "Lato";
+							    Chart.defaults.global.defaultFontSize = 18;
+							    
+							    var dataFirst = {
+							        label: $('#n1').text(),
+							        data: [<%= t1w %>],
+							        lineTension: 0.3,
+							        fill: false,
+							        borderColor: '#B92D0B',
+							        backgroundColor: 'transparent',
+							        pointBorderColor: '#B92D0B',
+							        pointBackgroundColor: '#F7FA21',
+							        pointRadius: 5,
+							        pointHoverRadius: 15,
+							        pointHitRadius: 30,
+							        pointBorderWidth: 2,
+							        pointStyle: 'rect'
+							      };
+							    
+							    var dataSecond = {
+							        label: $('#n2').text(),
+							        data: [<%= t2w %>],
+							        lineTension: 0.3,
+							        fill: false,
+							        borderColor: '#2FDD7E',
+							        backgroundColor: 'transparent',
+							        pointBorderColor: '#2FDD7E',
+							        pointBackgroundColor: '#F7FA21',
+							        pointRadius: 5,
+							        pointHoverRadius: 15,
+							        pointHitRadius: 30,
+							        pointBorderWidth: 2
+							      };
+							    
+							    var yearData = {
+							      labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017"],
+							      datasets: [dataFirst, dataSecond]
+							    };
+							    
+							    var chartOptions = {
+							      legend: {
+							        display: true,
+							        position: 'top',
+							        labels: {
+							          boxWidth: 80,
+							          fontColor: 'black'
+							        }
+							      }
+							    };
+							    
+							    var lineChart = new Chart(winsChart, {
+							      type: 'line',
+							      data: yearData,
+							      options: chartOptions
+							    });
+							    
+							    var pfChart = document.getElementById("pfChart");
+							
+							    Chart.defaults.global.defaultFontFamily = "Lato";
+							    Chart.defaults.global.defaultFontSize = 18;
+							    
+							    var dataFirst = {
+							        label: $('#n1').text(),
+							        data: [<%= t1pf %>],
+							        lineTension: 0.3,
+							        fill: false,
+							        borderColor: '#5309A7',
+							        backgroundColor: 'transparent',
+							        pointBorderColor: '#5309A7',
+							        pointBackgroundColor: '#F456D9',
+							        pointRadius: 5,
+							        pointHoverRadius: 15,
+							        pointHitRadius: 30,
+							        pointBorderWidth: 2,
+							        pointStyle: 'rect'
+							      };
+							    
+							    var dataSecond = {
+							        label: $('#n2').text(),
+							        data: [<%= t2pf %>],
+							        lineTension: 0.3,
+							        fill: false,
+							        borderColor: '#0CC7D0',
+							        backgroundColor: 'transparent',
+							        pointBorderColor: '#0CC7D0',
+							        pointBackgroundColor: '#F456D9',
+							        pointRadius: 5,
+							        pointHoverRadius: 15,
+							        pointHitRadius: 30,
+							        pointBorderWidth: 2
+							      };
+							    
+							    var yearData = {
+							      labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017"],
+							      datasets: [dataFirst, dataSecond]
+							    };
+							    
+							    var chartOptions = {
+							      legend: {
+							        display: true,
+							        position: 'top',
+							        labels: {
+							          boxWidth: 80,
+							          fontColor: 'black'
+							        }
+							      }
+							    };
+							    
+							    var lineChart = new Chart(pfChart, {
+							      type: 'line',
+							      data: yearData,
+							      options: chartOptions
+							    });
+							    
+							    var wpChart = document.getElementById("wpChart");
+							
+							    Chart.defaults.global.defaultFontFamily = "Lato";
+							    Chart.defaults.global.defaultFontSize = 18;
+							    
+							    var dataFirst = {
+							        label: $('#n1').text(),
+							        data: [<%= t1wp %>],
+							        lineTension: 0.3,
+							        fill: false,
+							        borderColor: '#F38B1B',
+							        backgroundColor: 'transparent',
+							        pointBorderColor: '#F38B1B',
+							        pointBackgroundColor: '#0AFAD6',
+							        pointRadius: 5,
+							        pointHoverRadius: 15,
+							        pointHitRadius: 30,
+							        pointBorderWidth: 2,
+							        pointStyle: 'rect'
+							      };
+							    
+							    var dataSecond = {
+							        label: $('#n2').text(),
+							        data: [<%= t2wp %>],
+							        lineTension: 0.3,
+							        fill: false,
+							        borderColor: '#0416CC',
+							        backgroundColor: 'transparent',
+							        pointBorderColor: '#0416CC',
+							        pointBackgroundColor: '#0AFAD6',
+							        pointRadius: 5,
+							        pointHoverRadius: 15,
+							        pointHitRadius: 30,
+							        pointBorderWidth: 2
+							      };
+							    
+							    var yearData = {
+							      labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017"],
+							      datasets: [dataFirst, dataSecond]
+							    };
+							    
+							    var chartOptions = {
+							      legend: {
+							        display: true,
+							        position: 'top',
+							        labels: {
+							          boxWidth: 80,
+							          fontColor: 'black'
+							        }
+							      }
+							    };
+							    
+							    var lineChart = new Chart(wpChart, {
+							      type: 'line',
+							      data: yearData,
+							      options: chartOptions
+							    });
+						</script>
+					</div>
+					</div>
+					<div style="padding: 15px">
+						<span><h4 id="rsHeader" style="color: #444141;">Regular Season Meetings <i id="rsPlus" class="fa fa-plus-square-o" aria-hidden="true"></i><a href=""></a></h4></span>
+						<div id="rsTable" style="display: none;">
+							<table id="table" class="table table-striped" style="width:100%">
+								<thead>
+								<tr>
+									<th>Home</th>
+									<th>Home Score</th>
+									<th>Away Score</th>
+									<th>Away</th>
+									<th>Week</th>
+									<th>Year</th>
+								</tr>
+								</thead>
+								<tbody>
+									<% for (var i = 0; i < rs.length; i++) { %>
+								         <tr>
+								         	<td><%= rs[i].home %></td>
+								         	<td><%= rs[i].h_score %></td>
+											<td><%= rs[i].a_score %></td>
+											<td><%= rs[i].away %></td>
+											<td><%= rs[i].week %></td>
+											<td><%= rs[i].year %></td>
+								         </tr>
+								      <% }; %>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div style="padding: 15px">
+						<span><h4 id="poHeader" style="color: #444141;">Playoff Meetings <i id="poPlus" class="fa fa-plus-square-o" aria-hidden="true"></i><a href=""></a></h4></span>
+						<div id="poTable" style="display: none;">
+							<table id="table" class="table table-striped" style="width:100%">
+								<thead>
+								<tr>
+									<th>Home</th>
+									<th>Home Score</th> 
+									<th>Away Score</th>
+									<th>Away</th>
+									<th>Year</th>
+								</tr>
+								</thead>
+								<tbody> 
+									<% for (var i = 0; i < po.length; i++) { %>
+								         <tr>
+								         	<td><%= po[i].home %></td>
+								         	<td><%= po[i].h_score %></td>
+											<td><%= po[i].a_score %></td>
+											<td><%= po[i].away %></td>
+											<td><%= po[i].year %></td>
+								         </tr>
+								      <% }; %>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div style="padding: 15px">
+						<span><h4 id="chHeader" style="color: #444141;">Durray Championship Meetings <i id="chPlus" class="fa fa-plus-square-o" aria-hidden="true"></i><a href=""></a></h4></span>
+						<div id="chTable" style="display: none;">
+							<table id="table" class="table table-striped" style="width:100%">
+								<thead>
+								<tr>
+									<th>Home</th>
+									<th>Home Score</th> 
+									<th>Away Score</th>
+									<th>Away</th>
+									<th>Year</th>
+								</tr>
+								</thead>
+								<tbody> 
+									<% for (var i = 0; i < champ.length; i++) { %>
+								         <tr>
+								         	<td><i class="fa fa-trophy" aria-hidden="true"></i> <span><%= champ[i].away %></span></td>
+								         	<td><%= champ[i].a_score %></td>
+											<td><%= champ[i].h_score %></td>
+											<td><%= champ[i].home %></td>
+											<td><%= champ[i].year %></td>
+								         </tr>
+								      <% }; %>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+	        </div>
+		</div>
+	</div>
+<script src="/javascript/h2hJs.js"></script>
+<% include partials/footer %>
+

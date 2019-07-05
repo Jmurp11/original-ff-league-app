@@ -1,0 +1,184 @@
+<% include partials/header %>
+
+	<div class="content">
+		<h1>League Records</h1>
+        
+		   <div id="box">
+	            <div class="box-top"></div>
+	            <div class="box-panel">
+	            <br>
+	            <div id="text-carousel" class="carousel slide" data-ride="carousel">
+				    <!-- Wrapper for slides -->
+				    <div class="row">
+				        <div class="col-xs-offset-3 col-xs-6">
+				            <div class="carousel-inner">
+				                <div class="item active">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;"><%= rMpgTeam %></h3>
+				                        	<h4 style="text-align: center; color: #07327C;"><%= rMpgWeek %></h4>
+				                        	<h4 style="text-align: center; color: #07327C;"><%= rMpgYear %></h4>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Points</h5>
+				                            <h5 style="text-align: center; color: #07327C;">(Game)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;"><%= rMpgPoints %></h1>
+				                        </div> 
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;">Anthony Carr</h3>
+				                        	<h3 style="text-align: center; color: #07327C;">2016</h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Points</h5>
+				                            <h5 style="text-align: center; color: #07327C;">(Season)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C;text-shadow: 3px 2px gray;font-size:300%;">1580.8</h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;"><%= poMpgTeam %></h3>
+				                        	<h3 style="text-align: center; color: #07327C;"><%= poMpgYear %></h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Points</h5>
+				                            <h5 style="text-align: center; color: #07327C;">(Playoff)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;"><%= poMpgPoints %></h1>
+				                        </div>
+				                    </div>
+				                </div>
+				               <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;"><%= rmIpgTeam %></h3>
+				                        	<h4 style="text-align: center; color: #07327C;"><%= rmIpgWeek %></h4>
+				                        	<h4 style="text-align: center; color: #07327C;"><%= rmIpgYear %></h4>
+				                        	<h5 style="text-align: center; color: #07327C;">Least Points</h5>
+				                            <h5 style="text-align: center; color: #07327C;">(Game)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;"><%= rmIpgPoints %></h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;">Peter McGrane</h3>
+				                        	<h3 style="text-align: center; color: #07327C;">2011</h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Least Points</h5>
+				                            <h5 style="text-align: center; color: #07327C;">(Season)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;">919</h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;"><%= pomIpgTeam %></h3>
+				                        	<h3 style="text-align: center; color: #07327C;"><%= pomIpgYear %></h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Least Points</h5>
+				                            <h5 style="text-align: center; color: #07327C;">(Playoff)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;"><%= pomIpgPoints %></h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;">John Bronzo (2015), Anthony Carr(2016), Keegan Talty(2017)</h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Wins</h5>
+				                        	<h5 style="text-align: center; color: #07327C;">(Season)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;">11</h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;"><%= mwAllTimeTeam %></h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Wins</h5>
+				                        	<h5 style="text-align: center; color: #07327C;">(All-Time)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;"><%= mwAllTimeW %></h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;"><%= mlAllTimeTeam %></h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Losses</h5>
+				                        	<h5 style="text-align: center; color: #07327C;">(All-Time)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;"><%= mlAllTimeL %></h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;">Tommy Enright</h3>
+				                        	<h3 style="text-align: center; color: #07327C;">2017</h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Losses</h5>
+				                        	<h5 style="text-align: center; color: #07327C;">(Season)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;">11</h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;">Keegan Talty</h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Durray Wins</h5>
+				                            <h5 style="text-align: center; color: #07327C;">(All-Time)</h5>
+				                        </div>
+				                         <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C; text-shadow: 3px 2px gray; font-size:500%;"><i class="fa fa-trophy" aria-hidden="true"></i> <i class="fa fa-trophy" aria-hidden="true"></i> </h1>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="item">
+				                    <div class="carousel-content">
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h3 style="text-align: center; color: #07327C;"><%= mPfAllTimeTeam%></h3>
+				                        	<h5 style="text-align: center; color: #07327C;">Most Points</h5>
+				                            <h5 style="text-align: center; color: #07327C;">(All-Time)</h5>
+				                        </div>
+				                        <div style="display: inline-block; vertical-align: top; padding: 15px">
+				                        	<h1 style="color: #07327C;text-shadow: 3px 2px gray;font-size:300%;"><%= mPfAllTimePF %></h1>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				    <!-- Controls --> 
+			    	<a class="left carousel-control" href="#text-carousel" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left"></span>
+				  </a>
+				  <a class="right carousel-control" href="#text-carousel" data-slide="next">
+				     <span class="glyphicon glyphicon-chevron-right"></span>
+				  </a>
+				
+				</div>
+	            
+			</div>
+		</div>
+    </div>
+<% include partials/footer %>
