@@ -4,7 +4,7 @@
   "description": "Man Durray V1",
   "main": "app.js",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^2.6.4",
     "body-parser": "^1.17.2",
     "ejs": "^2.5.7",
     "ejs-lint": "^0.3.0",
